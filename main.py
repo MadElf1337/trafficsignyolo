@@ -13,7 +13,7 @@ app = Flask(__name__)
 @app.route('/',methods=['GET','POST'])
 def welcome():
     if request.method=='GET':
-        return render_template('input.html')
+        return render_template('index.html')
     
     uploads = request.files['file']
     if uploads.filename != '':
@@ -23,7 +23,7 @@ def welcome():
     file_location = f'static/result.png'
     preprocess(f"static/result.png")
 
-    return render_template('input.html', file_location=file_location)
+    return render_template('index.html', file_location=file_location)
 
 
 
